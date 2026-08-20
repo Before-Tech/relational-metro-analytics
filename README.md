@@ -7,10 +7,7 @@ An enterprise data engineering and analytics solution built on 100,000+ historic
 
 ## 🏗 Tech Stack & Architecture
 
-RAW CSV SOURCE              DATA WAREHOUSE                    BI & REPORTING LAYER
-┌──────────────────┐       ┌──────────────────────┐          ┌───────────────────────┐
-│ • Kaggle CSVs    │ ────> │ • Google BigQuery    │ ───────> │ • Looker Studio /     │
-│   (5 Core Tables)│ (ETL) │   (Staging Views &   │   (SQL)  │   Power BI            │
-│                  │       │    Complex Analytics)│          │   (Interactive UI)    │
-└──────────────────┘       └──────────────────────┘          └───────────────────────┘
-
+```mermaid
+graph LR
+    A[<b>1. Raw CSV Source</b><br/>• Kaggle Olist Dataset<br/>• 5 Relational Tables] -->|ETL & Staging| B[<b>2. Data Warehouse</b><br/>• Google BigQuery<br/>• View Logic & SQL Engine]
+    B -->|Direct SQL Native Query| C[<b>3. BI & Reporting Layer</b><br/>• Looker Studio / Power BI<br/>• Interactive Executive Dashboards]
